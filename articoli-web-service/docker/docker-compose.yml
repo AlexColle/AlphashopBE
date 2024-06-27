@@ -1,0 +1,41 @@
+services:
+  pgsql:
+    image: postgres:latest
+    restart: unless-stopped
+    container_name: postgresql
+    volumes:
+      - psdb-volume:/var/lib/postgresql/data
+    networks:
+      ntpgsql:
+        ipv4_address: 172.21.0.2
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=123_Stella
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    container_name: pgadmin4
+    volumes:
+      - type: bind
+        source: ./dockervol
+        target: /var/lib/pgadmin4/storage/postgres
+    networks:
+      ntpgsql:
+        ipv4_address: 172.21.0.3
+    ports:
+      - "80:80"
+    environment:
+      - PGADMIN_CONFIG_SERVER_MODE=True
+      - PGADMIN_DEFAULT_EMAIL=nicola@example.com
+      - PGADMIN_DEFAULT_PASSWORD=123_Stella
+
+volumes:
+  psdb-volume:
+
+networks:
+  ntpgsql:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16

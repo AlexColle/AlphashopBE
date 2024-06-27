@@ -1,0 +1,61 @@
+# ==============================================================
+# = Promo Web Service con Autenticazione JWT
+# ==============================================================
+
+server:
+  port: 8091
+
+spring:
+  application:
+    name: PromoWebService
+# ==============================================================
+# = Proprietà Fonte Dati PostgreSQL
+# ==============================================================
+  datasource:
+    initialization-mode: always
+    password: 123_Stella
+    platform: postgres
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+    
+# ==============================================================
+# = Proprietà Servizio gestUser
+# ==============================================================
+gestuser:
+  srvUrl: http://localhost:8019/api/utenti/cerca/userId/
+  userId: ReadUser
+  password: BimBumBam_2018
+  
+# ==============================================================
+# = Parametri Sicurezza JWT 
+# ==============================================================
+sicurezza:
+    uri: /auth
+    refresh: /refresh
+    header: Authorization
+    prefix: Bearer 
+    expiration: 86400
+    secret: 123_Stella
+    
+# ==============================================================
+# = Configurazione levello di Log PriceClient
+# ==============================================================      
+logging:
+  level:
+    com:
+      xantrix:
+        webapp:
+          controller:
+            ArticoliClient: DEBUG
+  
+
