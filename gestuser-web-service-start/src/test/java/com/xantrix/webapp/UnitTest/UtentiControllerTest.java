@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
-import com.xantrix.webapp.Application;
+import com.xantrix.webapp.GestUserWebServiceApplication;
 import com.xantrix.webapp.repository.UtentiRepository;
 
 import org.junit.Before;
@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = GestUserWebServiceApplication.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UtentiControllerTest

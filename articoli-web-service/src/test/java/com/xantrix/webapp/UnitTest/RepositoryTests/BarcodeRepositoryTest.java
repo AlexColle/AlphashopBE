@@ -2,7 +2,7 @@ package com.xantrix.webapp.UnitTest.RepositoryTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
  
-import com.xantrix.webapp.Application;
+import com.xantrix.webapp.ArticoliWebServiceApplication;
 import com.xantrix.webapp.entity.Barcode;
 
 import com.xantrix.webapp.repository.BarcodeRepository;
@@ -14,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = ArticoliWebServiceApplication.class)
 @SpringBootTest
 public class BarcodeRepositoryTest
 {

@@ -20,12 +20,12 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.xantrix.webapp.Application;
+import com.xantrix.webapp.PriceArtWebServiceApplication;
  
 
 @TestPropertySource(locations="classpath:application-list100.properties")
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = PriceArtWebServiceApplication.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class InfoControllerTest 

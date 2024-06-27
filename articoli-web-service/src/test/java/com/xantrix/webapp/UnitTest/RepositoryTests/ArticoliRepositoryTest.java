@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import com.xantrix.webapp.Application;
+import com.xantrix.webapp.ArticoliWebServiceApplication;
 import com.xantrix.webapp.entity.Articoli;
 import com.xantrix.webapp.repository.ArticoliRepository;
 
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = ArticoliWebServiceApplication.class)
 @SpringBootTest
 //@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ArticoliRepositoryTest

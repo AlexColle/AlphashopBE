@@ -1,6 +1,6 @@
 package com.xantrix.webapp.UnitTest.ControllerTest;
 
-import com.xantrix.webapp.Application;
+import com.xantrix.webapp.ArticoliWebServiceApplication;
 import com.xantrix.webapp.entity.Articoli;
 import com.xantrix.webapp.repository.ArticoliRepository;
 
@@ -26,7 +26,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = ArticoliWebServiceApplication.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class InsertArtTest

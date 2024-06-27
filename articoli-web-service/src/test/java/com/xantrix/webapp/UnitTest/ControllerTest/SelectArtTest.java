@@ -8,7 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.xantrix.webapp.Application;
+import com.xantrix.webapp.ArticoliWebServiceApplication;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +34,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.io.IOException;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = ArticoliWebServiceApplication.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SelectArtTest

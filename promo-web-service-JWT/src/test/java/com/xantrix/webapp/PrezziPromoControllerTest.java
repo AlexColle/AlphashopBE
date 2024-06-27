@@ -33,7 +33,7 @@ import com.xantrix.webapp.repository.PrezziPromoRepository;
 import com.xantrix.webapp.repository.PromoRepository;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = PromoWebServiceApplication.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrezziPromoControllerTest 

@@ -7,11 +7,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients(basePackages = "com.xantrix.webapp.controller")
-public class Application 
+public class ArticoliWebServiceApplication
 {
 
 	public static void main(String[] args) 
 	{
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ArticoliWebServiceApplication.class, args);
 	}
 }

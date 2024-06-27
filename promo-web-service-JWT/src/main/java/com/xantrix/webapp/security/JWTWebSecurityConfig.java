@@ -37,16 +37,16 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${sicurezza.uri}")
 	private String authenticationPath;
 
-	@Autowired
+	private final PasswordEncoderConfig encoder;
+
+    public JWTWebSecurityConfig(PasswordEncoderConfig encoder) {
+        this.encoder = encoder;
+    }
+
+    @Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception 
 	{
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoderBean());
-	}
-
-	@Bean
-	public PasswordEncoder passwordEncoderBean() 
-	{
-		return new BCryptPasswordEncoder();
+		auth.userDetailsService(userDetailsService).passwordEncoder(encoder.passwordEncoderBean());
 	}
 
 	@Bean

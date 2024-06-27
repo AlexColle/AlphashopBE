@@ -15,8 +15,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -37,16 +35,16 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${sicurezza.uri}")
     private String authenticationPath;
 
+    private final PasswordEncoderConfig encoder;
+
+    public JWTWebSecurityConfig(PasswordEncoderConfig encoder) {
+        this.encoder = encoder;
+    }
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
     {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoderBean());
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoderBean()
-    {
-        return new BCryptPasswordEncoder();
+        auth.userDetailsService(userDetailsService).passwordEncoder(encoder.passwordEncoderBean());
     }
 
     @Bean
